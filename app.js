@@ -11,7 +11,10 @@ function animateSlides() {
     const img = slide.querySelector("img");
     const revealText = slide.querySelector(".reveal-text");
 
-    gsap.to(revealImg, 1, { x: "100%" });
+    const slideTl = gsap.timeline({
+      defaults: { duration: 1, ease: "power2.inOut" },
+    });
+    slideTl.fromTo(revealImg, { x: "0%" }, { x: "100%" });
   });
 }
 
